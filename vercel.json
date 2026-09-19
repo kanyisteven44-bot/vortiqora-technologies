@@ -1,0 +1,25 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/vortiqora-official-logo.jpg",
+      "destination": "https://vortiqora-technologies.kanyisteven44.chatgpt.site/vortiqora-official-logo.jpg"
+    },
+    {
+      "source": "/stephen-kanyi-founder.jpg",
+      "destination": "https://vortiqora-technologies.kanyisteven44.chatgpt.site/stephen-kanyi-founder.jpg"
+    },
+    {
+      "source": "/vortiqora-asset-identity.webp",
+      "destination": "https://vortiqora-technologies.kanyisteven44.chatgpt.site/vortiqora-asset-identity.webp"
+    },
+    {
+      "source": "/business-systems-kenya.webp",
+      "destination": "https://vortiqora-technologies.kanyisteven44.chatgpt.site/business-systems-kenya.webp"
+    },
+    {
+      "source": "/community-technology-nairobi.webp",
+      "destination": "https://vortiqora-technologies.kanyisteven44.chatgpt.site/community-technology-nairobi.webp"
+    }
+  ]
+}

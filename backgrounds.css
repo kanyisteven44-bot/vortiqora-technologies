@@ -1,0 +1,73 @@
+.photo-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #080d14;
+}
+
+.photo-hero::before,
+.photo-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.photo-hero::before {
+  z-index: -2;
+  background-image: var(--hero-photo);
+  background-size: cover;
+  background-position: var(--hero-position, center);
+  filter: saturate(.68) contrast(1.08);
+  transform: scale(1.015);
+}
+
+.photo-hero::after {
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(6,10,16,.97) 0%, rgba(6,10,16,.86) 43%, rgba(6,10,16,.34) 100%), linear-gradient(0deg, rgba(6,10,16,.8), transparent 62%);
+}
+
+.photo-event {
+  --hero-photo: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Day_1_of_Wikimania_Nairobi_2025_%2828%29.jpg/960px-Day_1_of_Wikimania_Nairobi_2025_%2828%29.jpg');
+  --hero-position: center 42%;
+}
+
+.photo-community {
+  --hero-photo: url('https://diff.wikimedia.org/wp-content/uploads/2025/09/Inauguracion_de_Wikimania_Nairobi_2025_1.jpg?fit=1600%2C900');
+  --hero-position: center 45%;
+}
+
+.photo-city {
+  --hero-photo: url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Nairobi%20skyline%20P1000021.jpg?width=1800');
+  --hero-position: center 52%;
+}
+
+.photo-product {
+  --hero-photo: url('vortiqora-asset-identity.webp');
+  --hero-position: center 46%;
+}
+
+.photo-founder {
+  --hero-photo: url('stephen-kanyi-founder.jpg');
+  --hero-position: center 24%;
+}
+
+.photo-careers {
+  --hero-photo: url('https://diff.wikimedia.org/wp-content/uploads/2025/09/Inauguracion_de_Wikimania_Nairobi_2025_1.jpg?fit=1600%2C900');
+  --hero-position: center 55%;
+}
+
+.photo-legal {
+  --hero-photo: url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Nairobi%20skyline%20P1000021.jpg?width=1800');
+  --hero-position: center 58%;
+}
+
+.photo-error {
+  --hero-photo: url('vortiqora-asset-identity.webp');
+  --hero-position: center;
+}
+
+@media (max-width: 700px) {
+  .photo-hero::after {
+    background: linear-gradient(90deg, rgba(6,10,16,.95), rgba(6,10,16,.65)), linear-gradient(0deg, rgba(6,10,16,.88), transparent 55%);
+  }
+}

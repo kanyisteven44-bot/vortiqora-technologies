@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vortiqora-technologies.kanyisteven44.chatgpt.site/sitemap.xml
