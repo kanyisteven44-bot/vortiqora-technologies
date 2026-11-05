@@ -92,12 +92,20 @@ if (contactForm) contactForm.addEventListener('submit', event => {
 
 const enquiryForm = document.querySelector('.contact-form');
 if (enquiryForm) {
+  const service = enquiryForm.elements.namedItem('service');
+  const requestedService = new URLSearchParams(window.location.search).get('service');
+  if ([...service.options].some(option => option.value === requestedService)) {
+    service.value = requestedService;
+  }
+
   enquiryForm.querySelector('[data-channel="whatsapp"]').hidden = false;
   enquiryForm.addEventListener('submit', event => {
     event.preventDefault();
     const details = new FormData(enquiryForm);
     const message = [
       'Hello Vortiqora Technologies,',
+      '',
+      'Enquiry: ' + service.selectedOptions[0].textContent,
       '',
       String(details.get('message')).trim(),
       '',
