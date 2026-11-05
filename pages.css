@@ -16,3 +16,31 @@
   font: inherit;
 }
 .contact-form select:focus-visible { outline: 2px solid #57d3ff; outline-offset: 2px; }
+
+.project-process { background: #101827; color: #f8fafc; }
+.project-process .content-copy { color: #cbd5e1; }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 32px 0;
+}
+.process-steps li {
+  counter-increment: step;
+  border-top: 2px solid #7789ff;
+  padding: 22px;
+  background: #172235;
+}
+.process-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  color: #aebaff;
+  font-weight: 700;
+}
+.process-steps h3 { margin: 12px 0 8px; }
+.process-steps p { color: #d5deeb; line-height: 1.55; margin: 0; }
+@media (max-width: 720px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
