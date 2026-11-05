@@ -27,3 +27,20 @@
   .hero h1 { font-size: clamp(2.55rem, 10vw, 3.65rem); }
   .hero-signature { left: 24px; right: auto; bottom: 24px; }
 }
+
+/* Keep the portrait in the hero while giving the headline a readable backdrop. */
+.hero-media { inset: 0; }
+.hero-media img { object-position: center 24%; }
+.hero-overlay {
+  background: linear-gradient(90deg, #070b11 0%, #070b11f2 23%, #070b1140 48%, transparent 60%),
+              linear-gradient(0deg, #070b11a6, transparent 40%);
+}
+.hero-copy { max-width: min(42vw, 650px); }
+@media (max-width: 760px) {
+  .hero { height: auto; min-height: 0; display: block; padding: clamp(230px, 63vw, 440px) 24px 28px; }
+  .hero-media { bottom: auto; height: clamp(330px, 85vw, 550px); }
+  .hero-media img { object-position: center 21%; }
+  .hero-overlay { background: linear-gradient(0deg, #070b11 24%, #070b11 44%, #070b1100 78%); }
+  .hero-copy { position: relative; inset: auto; transform: none; max-width: 38rem; }
+  .hero-signature { position: relative; inset: auto; margin-top: 24px; width: fit-content; }
+}
