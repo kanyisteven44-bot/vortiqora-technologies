@@ -89,3 +89,25 @@ if (contactForm) contactForm.addEventListener('submit', event => {
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nWhat I want to solve:\n${message}`);
   window.location.href = `mailto:vortiqoratech@gmail.com?subject=${subject}&body=${body}`;
 });
+
+const enquiryForm = document.querySelector('.contact-form');
+if (enquiryForm) {
+  enquiryForm.querySelector('[data-channel="whatsapp"]').hidden = false;
+  enquiryForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const details = new FormData(enquiryForm);
+    const message = [
+      'Hello Vortiqora Technologies,',
+      '',
+      String(details.get('message')).trim(),
+      '',
+      String(details.get('name')).trim(),
+      String(details.get('email')).trim(),
+    ].join('\n');
+    const body = encodeURIComponent(message);
+    const destination = event.submitter?.dataset.channel === 'whatsapp'
+      ? 'https://wa.me/254117499067?text=' + body
+      : 'mailto:vortiqoratech@gmail.com?subject=Project%20enquiry&body=' + body;
+    window.location.assign(destination);
+  });
+}
